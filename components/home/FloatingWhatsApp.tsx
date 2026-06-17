@@ -7,9 +7,16 @@ export function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
-      className="fixed bottom-6 right-6 z-50 flex h-20 w-20 items-center justify-center rounded-full bg-[#25D366] p-[23px] shadow-[0px_14px_21px_-4px_rgba(0,0,0,0.1),0px_6px_9px_-6px_rgba(0,0,0,0.1)] transition-transform hover:scale-105"
+      className="fixed bottom-4 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] p-3 shadow-[0px_14px_21px_-4px_rgba(0,0,0,0.1),0px_6px_9px_-6px_rgba(0,0,0,0.1)] transition-transform hover:scale-105 sm:bottom-6 sm:right-6 sm:h-20 sm:w-20 sm:p-[23px]"
     >
-      <svg width="34" height="35" viewBox="0 0 34 35" fill="none" aria-hidden="true">
+      <svg
+        width="34"
+        height="35"
+        viewBox="0 0 34 35"
+        fill="none"
+        aria-hidden="true"
+        className="h-7 w-7 sm:h-[34px] sm:w-[34px]"
+      >
         <path
           d="M17 0.5C7.89 0.5 0.5 7.89 0.5 17C0.5 19.86 1.24 22.55 2.55 24.89L0.5 34.5L10.36 32.49C12.62 33.68 15.23 34.35 17.99 34.35C27.1 34.35 34.49 26.96 34.49 17.86C34.49 8.76 27.1 0.5 17 0.5Z"
           fill="white"

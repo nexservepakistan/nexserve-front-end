@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function FamilyCardHeroImage() {
   return (
-    <div className="relative hidden w-full max-w-[522px] shrink-0 lg:block">
+    <div className="relative mx-auto w-full max-w-[400px] shrink-0 sm:max-w-[480px] lg:mx-0 lg:max-w-[522px]">
       <Image
         src="/images/service.png"
         alt="NexServe Family Card membership benefits"

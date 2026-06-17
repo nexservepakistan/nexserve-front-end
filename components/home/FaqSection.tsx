@@ -11,7 +11,7 @@ function ChevronIcon({ open }: { open: boolean }) {
       viewBox="0 0 20 20"
       fill="none"
       aria-hidden="true"
-      className={`transition-transform ${open ? "rotate-180" : ""}`}
+      className={`shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
     >
       <path
         d="M5 7.5L10 12.5L15 7.5"
@@ -29,17 +29,17 @@ export function FaqSection() {
 
   return (
     <section className="w-full bg-[#F6F8FB] py-0">
-      <div className="mx-auto flex max-w-[768px] flex-col items-center px-6 pb-20">
+      <div className="mx-auto flex max-w-[768px] flex-col items-center px-4 pb-12 sm:px-6 sm:pb-16 lg:pb-20">
         <div className="text-center">
-          <h2 className="font-[family-name:var(--font-poppins)] text-[42px] font-bold leading-10 text-[#0B1F3A]">
+          <h2 className="font-[family-name:var(--font-poppins)] text-2xl font-bold leading-tight text-[#0B1F3A] sm:text-3xl md:text-4xl lg:text-[42px] lg:leading-10">
             Frequently Asked Questions
           </h2>
-          <p className="pt-4 font-[family-name:var(--font-poppins)] text-lg leading-7 text-[#6B7280]">
+          <p className="pt-3 font-[family-name:var(--font-poppins)] text-base leading-7 text-[#6B7280] sm:pt-4 sm:text-lg">
             Everything you need to know about NexServe services and membership.
           </p>
         </div>
 
-        <div className="flex w-full flex-col gap-4 pt-12">
+        <div className="flex w-full flex-col gap-3 pt-8 sm:gap-4 sm:pt-12">
           {faqItems.map((question, index) => {
             const isOpen = openIndex === index;
 
@@ -51,15 +51,15 @@ export function FaqSection() {
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="flex w-full items-center justify-between px-6 py-5 text-left"
+                  className="flex w-full items-center justify-between gap-3 px-4 py-4 text-left sm:px-6 sm:py-5"
                 >
-                  <span className="font-[family-name:var(--font-poppins)] text-base font-semibold text-[#0B1F3A]">
+                  <span className="font-[family-name:var(--font-poppins)] text-sm font-semibold text-[#0B1F3A] sm:text-base">
                     {question}
                   </span>
                   <ChevronIcon open={isOpen} />
                 </button>
                 {isOpen && (
-                  <div className="border-t border-[#E5E7EB] px-6 py-4">
+                  <div className="border-t border-[#E5E7EB] px-4 py-4 sm:px-6">
                     <p className="font-[family-name:var(--font-poppins)] text-[15px] leading-[23px] text-[#6B7280]">
                       Contact our team on WhatsApp at 0315-1018419 for detailed
                       answers about this topic.

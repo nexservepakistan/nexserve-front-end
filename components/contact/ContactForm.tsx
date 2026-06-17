@@ -2,14 +2,13 @@
 
 import { type FormEvent, useState } from "react";
 import { serviceOptions } from "@/lib/contact-data";
-import { WHATSAPP_URL } from "@/lib/home-data";
 import { SendIcon } from "./ContactIcons";
 
 const inputClassName =
-  "w-full rounded-[9px] border border-[#D0D5DD] bg-[#F6F8FB] px-[15px] py-[11px] font-[family-name:var(--font-poppins)] text-[13px] leading-5 tracking-[0.02em] text-[#0B1F3A] shadow-[0px_0.94px_1.87px_rgba(16,24,40,0.05)] outline-none transition-colors focus:border-[#0B1F3A]";
+  "w-full rounded-[9px] border border-[#D0D5DD] bg-[#F6F8FB] px-[15px] py-[11px] font-[family-name:var(--font-poppins)] text-sm leading-5 tracking-[0.02em] text-[#0B1F3A] shadow-[0px_0.94px_1.87px_rgba(16,24,40,0.05)] outline-none transition-colors focus:border-[#0B1F3A] sm:text-[13px]";
 
 const labelClassName =
-  "font-[family-name:var(--font-poppins)] text-[17px] font-medium leading-[26px] tracking-[0.015em] text-[#3C4959]";
+  "font-[family-name:var(--font-poppins)] text-sm font-medium leading-6 tracking-[0.015em] text-[#3C4959] sm:text-[17px] sm:leading-[26px]";
 
 export function ContactForm() {
   const [name, setName] = useState("");
@@ -17,32 +16,45 @@ export function ContactForm() {
   const [phone, setPhone] = useState("");
   const [service, setService] = useState("");
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
+    setStatus("loading");
+    setErrorMessage("");
 
-    const text = [
-      "Hi NexServe, I'd like to get in touch.",
-      name && `Name: ${name}`,
-      email && `Email: ${email}`,
-      phone && `Phone: ${phone}`,
-      service && `Service: ${service}`,
-      message && `Message: ${message}`,
-    ]
-      .filter(Boolean)
-      .join("\n");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, phone, service, message }),
+      });
 
-    window.open(
-      `${WHATSAPP_URL}?text=${encodeURIComponent(text)}`,
-      "_blank",
-      "noopener,noreferrer"
-    );
+      const data = await res.json();
+
+      if (!res.ok) {
+        setStatus("error");
+        setErrorMessage(data.error || "Something went wrong. Please try again.");
+        return;
+      }
+
+      setStatus("success");
+      setName("");
+      setEmail("");
+      setPhone("");
+      setService("");
+      setMessage("");
+    } catch {
+      setStatus("error");
+      setErrorMessage("Something went wrong. Please try again.");
+    }
   }
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex w-full max-w-[552px] flex-col rounded-[9px] border-2 border-[#0B1F3A] bg-white p-[38px]"
+      className="flex w-full max-w-[552px] flex-col rounded-[9px] border-2 border-[#0B1F3A] bg-white p-5 sm:p-8 lg:p-[38px] lg:max-w-none"
     >
       <div className="flex flex-col gap-[11px]">
         <div className="flex flex-col gap-[9px]">
@@ -57,6 +69,7 @@ export function ContactForm() {
             onChange={(e) => setName(e.target.value)}
             className={inputClassName}
             required
+            disabled={status === "loading"}
           />
         </div>
 
@@ -71,6 +84,7 @@ export function ContactForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className={inputClassName}
+            disabled={status === "loading"}
           />
         </div>
 
@@ -86,6 +100,7 @@ export function ContactForm() {
             onChange={(e) => setPhone(e.target.value)}
             className={inputClassName}
             required
+            disabled={status === "loading"}
           />
         </div>
 
@@ -99,6 +114,7 @@ export function ContactForm() {
               value={service}
               onChange={(e) => setService(e.target.value)}
               className={`${inputClassName} appearance-none pr-10`}
+              disabled={status === "loading"}
             >
               <option value="">Select a service</option>
               {serviceOptions.map((option) => (
@@ -133,16 +149,30 @@ export function ContactForm() {
             rows={5}
             className={`${inputClassName} resize-none`}
             required
+            disabled={status === "loading"}
           />
         </div>
       </div>
 
+      {status === "success" && (
+        <p className="mt-4 font-[family-name:var(--font-poppins)] text-sm text-green-600">
+          Thank you! Your message has been sent successfully.
+        </p>
+      )}
+
+      {status === "error" && (
+        <p className="mt-4 font-[family-name:var(--font-poppins)] text-sm text-red-600">
+          {errorMessage}
+        </p>
+      )}
+
       <button
         type="submit"
-        className="mt-[37px] inline-flex w-fit items-center gap-2.5 rounded-[9px] bg-[#0B1F3A] px-7 py-3.5 font-[family-name:var(--font-poppins)] text-[15px] font-semibold leading-[23px] tracking-[0.015em] text-white transition-opacity hover:opacity-90"
+        disabled={status === "loading"}
+        className="mt-6 inline-flex w-full items-center justify-center gap-2.5 rounded-[9px] bg-[#0B1F3A] px-7 py-3.5 font-[family-name:var(--font-poppins)] text-sm font-semibold leading-[23px] tracking-[0.015em] text-white transition-opacity hover:opacity-90 disabled:opacity-60 sm:mt-[37px] sm:w-fit sm:text-[15px]"
       >
         <SendIcon />
-        Send
+        {status === "loading" ? "Sending..." : "Send"}
       </button>
     </form>
   );

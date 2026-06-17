@@ -5,23 +5,23 @@ import { BenefitCheckIcon } from "./FamilyCardIcons";
 export function MembershipBenefits() {
   return (
     <div className="flex w-full max-w-[603px] flex-col">
-      <h2 className="font-[family-name:var(--font-poppins)] text-[42.86px] font-bold leading-[51px] text-[#000E2B]">
+      <h2 className="font-[family-name:var(--font-poppins)] text-2xl font-bold leading-tight text-[#000E2B] sm:text-3xl md:text-4xl lg:text-[42.86px] lg:leading-[51px]">
         Membership Benefits
       </h2>
 
-      <ul className="flex flex-col pt-[34px] pb-[46px]">
+      <ul className="flex flex-col pt-6 pb-8 sm:pt-[34px] sm:pb-[46px]">
         {familyCardPageBenefits.map((benefit, index) => (
           <li
             key={benefit}
             className={[
-              "flex items-start gap-[17px]",
-              index > 0 ? "pt-[23px]" : "",
+              "flex items-start gap-3 sm:gap-[17px]",
+              index > 0 ? "pt-4 sm:pt-[23px]" : "",
             ].join(" ")}
           >
-            <div className="pt-[3px]">
+            <div className="pt-0.5 sm:pt-[3px]">
               <BenefitCheckIcon />
             </div>
-            <span className="font-[family-name:var(--font-poppins)] text-[25.71px] leading-10 text-[#000E2B]">
+            <span className="font-[family-name:var(--font-poppins)] text-base leading-7 text-[#000E2B] sm:text-xl sm:leading-9 lg:text-[25.71px] lg:leading-10">
               {benefit}
             </span>
           </li>
@@ -32,7 +32,7 @@ export function MembershipBenefits() {
         href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex h-20 w-fit items-center justify-center rounded-[17.14px] bg-[#FDA400] px-16 font-[family-name:var(--font-poppins)] text-xl font-bold text-[#000E2B] transition-opacity hover:opacity-90"
+        className="inline-flex h-14 w-full items-center justify-center rounded-[17.14px] bg-[#FDA400] px-6 text-center font-[family-name:var(--font-poppins)] text-base font-bold text-[#000E2B] transition-opacity hover:opacity-90 sm:h-20 sm:w-fit sm:px-16 sm:text-xl"
       >
         Get Family Card on WhatsApp
       </a>

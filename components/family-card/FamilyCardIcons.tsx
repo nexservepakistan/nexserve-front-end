@@ -6,7 +6,7 @@ function BenefitCheckIcon() {
       viewBox="0 0 34 34"
       fill="none"
       aria-hidden="true"
-      className="shrink-0"
+      className="h-7 w-7 shrink-0 sm:h-[34px] sm:w-[34px]"
     >
       <rect
         x="2.83"

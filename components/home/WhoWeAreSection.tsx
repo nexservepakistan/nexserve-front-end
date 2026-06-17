@@ -14,13 +14,13 @@ function FeatureIcon() {
 
 export function WhoWeAreSection() {
   return (
-    <section className="mx-auto w-full max-w-[1280px] px-[34px] py-20">
-      <div className="mx-auto flex max-w-[1220px] flex-col gap-[50px]">
+    <section className="mx-auto w-full max-w-[1280px] px-4 py-12 sm:px-6 sm:py-16 md:px-10 lg:px-20 lg:py-20">
+      <div className="mx-auto flex max-w-[1220px] flex-col gap-8 sm:gap-[50px]">
         <div className="flex flex-col items-center text-center">
-          <h2 className="font-[family-name:var(--font-poppins)] text-[42px] font-bold leading-[57px] text-[#000E2B]">
+          <h2 className="font-[family-name:var(--font-poppins)] text-2xl font-bold leading-tight text-[#000E2B] sm:text-3xl md:text-4xl lg:text-[42px] lg:leading-[57px]">
             Who We Are
           </h2>
-          <p className="mt-0 max-w-[858px] font-[family-name:var(--font-poppins)] text-lg leading-10 text-[#6B7280]">
+          <p className="mt-3 max-w-[858px] font-[family-name:var(--font-poppins)] text-base leading-7 text-[#6B7280] sm:mt-0 sm:text-lg sm:leading-10">
             NexServe Pakistan is a Karachi-based home service company dedicated
             to making home care simple, reliable, and affordable for every
             household.
@@ -35,10 +35,10 @@ export function WhoWeAreSection() {
             >
               <div className="flex flex-col gap-[18px] p-2.5">
                 <div className="flex items-center gap-[15px]">
-                  <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-[12.6px] bg-[#285389]">
+                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-[12.6px] bg-[#285389] sm:h-20 sm:w-20">
                     <FeatureIcon />
                   </div>
-                  <h3 className="font-[family-name:var(--font-poppins)] text-xl font-semibold leading-[30px] text-[#214169]">
+                  <h3 className="font-[family-name:var(--font-poppins)] text-lg font-semibold leading-7 text-[#214169] sm:text-xl sm:leading-[30px]">
                     {title}
                   </h3>
                 </div>

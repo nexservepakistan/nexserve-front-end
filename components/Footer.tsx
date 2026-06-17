@@ -142,7 +142,7 @@ const socialLinks = [
 export function Footer() {
   return (
     <footer className="relative z-[3] w-full bg-[#000E2B] pt-12 pb-8 sm:pt-16 lg:pt-[72px]">
-      <div className="mx-auto flex max-w-[1280px] flex-col items-start gap-8 px-4 sm:px-6 md:px-10 lg:gap-4 lg:px-20">
+      <div className="mx-auto flex max-w-[1280px] flex-col items-start gap-8 px-6 sm:px-6 md:px-10 lg:gap-4 lg:px-20">
         <div className="grid w-full max-w-[1120px] grid-cols-1 gap-10 sm:gap-12 md:grid-cols-2 lg:flex lg:items-start lg:justify-between lg:gap-[62px]">
           <div className="w-full lg:max-w-[360px]">
             <NexserveLogo variant="light" />

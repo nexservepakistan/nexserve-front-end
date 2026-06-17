@@ -62,7 +62,7 @@ function ListCheckIcon() {
       viewBox="0 0 23 23"
       fill="none"
       aria-hidden="true"
-      className="shrink-0"
+      className="h-5 w-5 shrink-0 sm:h-[23px] sm:w-[23px]"
     >
       <rect
         x="1.9"
@@ -102,7 +102,7 @@ export function AboutSectionHeading({
   return (
     <div className="flex items-center gap-2.5">
       <SectionIcon>{icon}</SectionIcon>
-      <h2 className="font-[family-name:var(--font-alatsi)] text-[26px] leading-[33px] text-[#214169]">
+      <h2 className="font-[family-name:var(--font-alatsi)] text-xl leading-7 text-[#214169] sm:text-2xl sm:leading-[33px] lg:text-[26px]">
         {title}
       </h2>
     </div>

@@ -13,19 +13,22 @@ export const teamMembers: TeamMember[] = [
     showBadge: true,
   },
   {
-    name: "Usman Ali",
+    name: "Sara Ali",
     role: "AC Technician",
-    image: "/images/team.png",
+    image:
+      "https://d27735ao2xxhhe.cloudfront.net/blog/pro/job-opportunities-for-pakistani-expats-in-europe-600x4006389e0b6c6e7b1669980342.jpg",
   },
   {
     name: "Hassan Raza",
     role: "Cleaning Specialist",
-    image: "/images/team.png",
+    image:
+      "https://www.adecco.com/-/media/project/adecco/adeccohu/image/resized-pictures/landscape-resized/15.png?h=500&iar=0&w=900&hash=C7820E8DD5AE5BCECD40276EBC6758BF",
   },
   {
     name: "Bilal Ahmed",
     role: "Plumber",
-    image: "/images/team.png",
+    image:
+      "https://www.intracen.org/sites/default/files/styles/content_100/public/media/image/media_image/2026/03/25/UKTP_Pakistan_Techimen_Agha_hand_20260319.jpg?itok=7Y4TJuQn",
   },
 ];
 

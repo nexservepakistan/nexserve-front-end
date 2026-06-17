@@ -42,8 +42,8 @@ export function TeamMemberCard({
   showBadge?: boolean;
 }) {
   return (
-    <article className="relative w-full max-w-[355px] overflow-hidden rounded-[21px] border border-[#E3E3E1] bg-white shadow-[0px_5.33px_9.77px_rgba(0,0,0,0.1)]">
-      <div className="relative h-[207px] w-full">
+    <article className="relative mx-auto w-full max-w-[355px] overflow-hidden rounded-[21px] border border-[#E3E3E1] bg-white shadow-[0px_5.33px_9.77px_rgba(0,0,0,0.1)] xl:mx-0">
+      <div className="relative h-[180px] w-full sm:h-[207px]">
         <Image
           src={image}
           alt={name}
@@ -52,25 +52,25 @@ export function TeamMemberCard({
           className="h-full w-full rounded-t-[21px] object-cover"
         />
         {showBadge && (
-          <div className="absolute top-[9px] right-[9px] flex h-[45px] w-[45px] items-center justify-center rounded-full bg-[#FDA400] p-2.5">
-            <VerifiedIcon className="[&_rect]:stroke-[#000E2B] [&_path]:stroke-[#000E2B]" />
+          <div className="absolute top-2 right-2 flex h-10 w-10 items-center justify-center rounded-full bg-[#FDA400] p-2 sm:top-[9px] sm:right-[9px] sm:h-[45px] sm:w-[45px] sm:p-2.5">
+            <VerifiedIcon className="h-4 w-4 [&_rect]:stroke-[#000E2B] [&_path]:stroke-[#000E2B] sm:h-auto sm:w-auto" />
           </div>
         )}
       </div>
 
-      <div className="flex flex-col gap-0 px-[9px] pl-6 pb-[14px]">
+      <div className="flex flex-col gap-0 px-3 pb-3 pl-4 sm:px-[9px] sm:pl-6 sm:pb-[14px]">
         <div className="pt-1">
-          <h3 className="font-[family-name:var(--font-poppins)] text-[18.76px] font-bold leading-[38px] text-[#000E2B]">
+          <h3 className="font-[family-name:var(--font-poppins)] text-base font-bold leading-8 text-[#000E2B] sm:text-[18.76px] sm:leading-[38px]">
             {name}
           </h3>
-          <p className="font-[family-name:var(--font-poppins)] text-[14.07px] leading-8 text-[#6B7280]">
+          <p className="font-[family-name:var(--font-poppins)] text-sm leading-7 text-[#6B7280] sm:text-[14.07px] sm:leading-8">
             {role}
           </p>
         </div>
 
-        <div className="flex items-center gap-[10.72px] pt-1">
-          <VerifiedIcon />
-          <span className="font-[family-name:var(--font-poppins)] text-[18.76px] font-medium leading-[27px] text-[#FDA400]">
+        <div className="flex items-center gap-2 pt-1 sm:gap-[10.72px]">
+          <VerifiedIcon className="h-4 w-4 shrink-0 sm:h-auto sm:w-auto" />
+          <span className="font-[family-name:var(--font-poppins)] text-sm font-medium leading-6 text-[#FDA400] sm:text-[18.76px] sm:leading-[27px]">
             Verified Provider
           </span>
         </div>
