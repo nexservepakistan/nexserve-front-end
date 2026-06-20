@@ -134,7 +134,7 @@ const socialLinks = [
   },
   {
     label: "Facebook",
-    href: "https://www.facebook.com/people/NexServe-Pakistan/61589648850762/",
+    href: "https://www.facebook.com/nexservepk",
     icon: FacebookIcon,
   },
 ] as const;
