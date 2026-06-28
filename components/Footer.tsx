@@ -129,7 +129,7 @@ function FacebookIcon() {
 const socialLinks = [
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/company/nexserve-pakistan/",
+    href: "https://www.linkedin.com/company/nexservepk/",
     icon: LinkedInIcon,
   },
   {
