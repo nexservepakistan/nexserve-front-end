@@ -4,7 +4,7 @@ export const stats = [
   { value: "500+", label: "Happy Customers" },
   { value: "1000+", label: "Jobs Completed" },
   { value: "100%", label: "Verified Technicians" },
-  { value: "2 hrs", label: "Avg Response Time" },
+  { value: "30 mins", label: "Avg Response Time" },
 ] as const;
 
 export const whoWeAreCards = [
