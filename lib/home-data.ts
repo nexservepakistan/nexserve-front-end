@@ -1,8 +1,8 @@
 export const WHATSAPP_URL = "https://wa.me/923151018419";
 
 export const stats = [
-  { value: "5,000+", label: "Happy Customers" },
-  { value: "12,000+", label: "Jobs Completed" },
+  { value: "500+", label: "Happy Customers" },
+  { value: "1000+", label: "Jobs Completed" },
   { value: "100%", label: "Verified Technicians" },
   { value: "2 hrs", label: "Avg Response Time" },
 ] as const;
