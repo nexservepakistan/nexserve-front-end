@@ -15,14 +15,16 @@ export function AboutContent() {
         <div className="flex flex-col gap-2.5">
           <AboutSectionHeading icon={<MissionIcon />} title="Our Mission" />
           <p className="font-[family-name:var(--font-poppins)] text-base leading-7 text-[#6B7280] sm:text-lg sm:leading-[34px]">
-            To deliver reliable, affordable, and professional home maintenance services with a customer-first experience.
+            To provide reliable and affordable home service support with a
+            professional customer experience.
           </p>
         </div>
 
         <div className="flex flex-col gap-3 sm:gap-[15px]">
           <AboutSectionHeading icon={<VisionIcon />} title="Our Vision" />
           <p className="font-[family-name:var(--font-poppins)] text-base leading-7 text-[#6B7280] sm:text-lg sm:leading-[34px]">
-            To become one of Pakistan&apos;s most trusted home service brands by building long-term customer trust, fast response systems, and professional service standards.
+            To become Karachi&apos;s trusted home care service partner for
+            families, apartments, and homeowners.
           </p>
         </div>
 
