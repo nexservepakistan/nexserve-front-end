@@ -24,15 +24,21 @@ export const services: ServiceItem[] = [
     icon: "/images/threelogo.png",
   },
   {
-    title: "Regular Home Cleaning",
+    title: "Regular Home Cleaning Services",
     description:
       "Weekly and monthly cleaning for kitchen, bathroom, and living areas by trained staff.",
     icon: "/images/fourlogo.png",
   },
   {
-    title: "Deep Cleaning",
+    title: "Deep Cleaning Services",
     description:
       "Full home deep clean, sofa wash, mattress cleaning, and move-in/move-out cleaning.",
     icon: "/images/fivelogo.png",
+  },
+  {
+    title: "Home Maintenance Services",
+    description:
+      "Full home deep clean, sofa wash, mattress cleaning, and move-in/move-out cleaning.",
+    icon: "/images/favicon.png",
   },
 ];
