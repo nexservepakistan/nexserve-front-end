@@ -69,7 +69,10 @@ export const problemCards = [
   },
   {
     title: "Home Maintenance Services",
-    description: "Complete home maintenance solutions, from electrical and plumbing to AC services and deep cleaning."
+    description: "Complete home maintenance solutions, from electrical and plumbing to AC services and deep cleaning.",
+    bg: "bg-[#FAF5FF]",
+    iconBg: "bg-[#F3E8FF]",
+    iconColor: "#00A63E",
   }
 ] as const;
 
