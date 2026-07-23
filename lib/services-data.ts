@@ -38,7 +38,7 @@ export const services: ServiceItem[] = [
   {
     title: "Home Maintenance Services",
     description:
-      "Full home deep clean, sofa wash, mattress cleaning, and move-in/move-out cleaning.",
+      "Complete home maintenance solutions, from electrical and plumbing to AC services and deep cleaning.",
     icon: "/images/favicon.png",
   },
 ];

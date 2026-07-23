@@ -67,6 +67,10 @@ export const problemCards = [
     iconBg: "bg-[#F3E8FF]",
     iconColor: "#9810FA",
   },
+  {
+    title: "Home Maintenance Services",
+    description: "Complete home maintenance solutions, from electrical and plumbing to AC services and deep cleaning."
+  }
 ] as const;
 
 export const howItWorksSteps = [
